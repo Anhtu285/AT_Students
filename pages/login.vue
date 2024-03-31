@@ -1,6 +1,6 @@
 <template>
   <div class="bg-gray-200 w-full h-screen text-primary font-sans">
-    <div>tessttt</div>
+    <div>login</div>
     <img :src="img" alt="" />
   </div>
 </template>
