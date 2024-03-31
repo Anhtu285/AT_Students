@@ -3,7 +3,6 @@
     <slot></slot>
 
     <footer-layout></footer-layout>
-  </div>
 </template>
 
 <script setup lang="ts">
