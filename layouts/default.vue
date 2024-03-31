@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <header>abcbcb</header>
+  <header-layout></header-layout>
     <slot></slot>
 
     <footer-layout></footer-layout>
@@ -9,6 +8,7 @@
 
 <script setup lang="ts">
 import FooterLayout from "@/components/Footer.vue";
+import HeaderLayout from '@/components/Header.vue'
 </script>
 
 <style></style>
