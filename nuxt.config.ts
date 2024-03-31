@@ -12,4 +12,8 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+
+  plugins: [
+    { src: '~/plugins/tailwind-elements.js', mode: 'client' },
+  ],
 })
