@@ -1,14 +1,12 @@
 <template>
-  <div>
-    <header>abcbcb</header>
+  <header-layout></header-layout>
     <slot></slot>
 
     <footer>footer</footer>
-  </div>
 </template>
 
-<script>
-export default {};
+<script setup lang="ts">
+import HeaderLayout from '@/components/Header.vue'
 </script>
 
 <style></style>

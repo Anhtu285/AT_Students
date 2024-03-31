@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import test from "@/components/test.vue";
 definePageMeta({
-  layout: "custome",
+  layout: "default",
 });
 </script>
 <template>
