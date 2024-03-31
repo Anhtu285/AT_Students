@@ -3,12 +3,12 @@
     <header>abcbcb</header>
     <slot></slot>
 
-    <footer>footer</footer>
+    <footer-layout></footer-layout>
   </div>
 </template>
 
-<script>
-export default {};
+<script setup lang="ts">
+import FooterLayout from "@/components/Footer.vue";
 </script>
 
 <style></style>
