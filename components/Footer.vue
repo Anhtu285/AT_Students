@@ -19,8 +19,8 @@
               <a href="https://dainam.edu.vn/" target="_blank">About Us</a>
             </li>
             <li><a href="https://ttsinhvien.dainam.edu.vn/">Home</a></li>
-            <li><a href="#">Chương trình học</a></li>
-            <li><a href="#">Liên hệ</a></li>
+            <li><a href="#">Education Program</a></li>
+            <li><a href="#">Hotline</a></li>
           </ul>
         </div>
         <div>
@@ -32,22 +32,23 @@
           <div class="flex space-x-4 mt-4">
             <a
               href="https://www.facebook.com/DAINAM.EDU.VN"
+              target="_blank"
               class="text-white hover:text-gray-300 text-2xl"
               ><i class="ri-facebook-circle-fill text-[40px]"></i
             ></a>
-            <a href="#" class="text-white hover:text-gray-300"
-              ><i class="fab fa-twitter"></i
-            ></a>
-            <a href="#" class="text-white hover:text-gray-300"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a href="#" class="text-white hover:text-gray-300"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
+            <a href="#" class="text-white hover:text-gray-300 text-2xl"
+              ><i class="ri-twitter-line text-[40px]"></i>
+            </a>
+            <a href="#" class="text-white hover:text-gray-300 text-2xl"
+              ><i class="ri-instagram-line text-[40px]"></i>
+            </a>
+            <!-- <a href="#" class="text-white hover:text-gray-300 text-2xl"
+              ><i class="fab fa-instagram text-[40px]"></i
+            ></a> -->
           </div>
         </div>
         <div>
-          <h2 class="text-xl font-bold mb-4">Nhận tin tức</h2>
+          <h2 class="text-xl font-bold mb-4">Get News</h2>
           <p>
             Đăng ký nhận tin tức để nhận được thông báo về các sự kiện mới nhất
             của trường.
