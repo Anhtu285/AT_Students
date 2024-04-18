@@ -5,6 +5,12 @@ export default defineNuxtConfig({
   alias: {
     '@': resolve(__dirname, './'),
   },
+  modules: [
+    '@nuxtjs/i18n',
+  ],
+  i18n: {
+    vueI18n: './i18n.config.ts'
+  },
   css: ['~/assets/css/main.scss'],
   postcss: {
     plugins: {
