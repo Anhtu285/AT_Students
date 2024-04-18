@@ -2,7 +2,8 @@
   <header-layout></header-layout>
   <slot></slot>
 
-  <footer-layout></footer-layout>
+    <footer-layout></footer-layout>
+  </div>
 </template>
 
 <script setup lang="ts">
