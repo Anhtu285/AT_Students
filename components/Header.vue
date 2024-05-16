@@ -37,7 +37,7 @@ function changeLocale(index: number) {
         <div
           class="relative group after:w-full after:content-[''] after:absolute after:top-[100%] after:left-0 after:h-2 after:bg-transparent"
         >
-          <img class="w-[20px]" :src="locale[selectLocale].icon" alt="" />
+          <img class="w-[36px]" :src="locale[selectLocale].icon" alt="" />
 
           <ul
             class="w-[160px] text-[14px] absolute top-[120px] group-hover:top-[120%] bg-white group-hover:opacity-100 group-hover:visible opacity-0 invisible transition-all duration-300 ease-linear p-2 rounded-md shadow-[rgba(0,0,0,0.1)_0px_4px_12px]"
@@ -87,19 +87,19 @@ function changeLocale(index: number) {
               class="font-semibold hover:text-primary transition duration-200 ease-linear"
             >
               <i class="ri-book-read-line"></i>
-              Chương Trình Đào Tạo
+              {{ $t("Education Program") }}
             </nuxt-link>
 
             <div
-              class="absolute top-[120px] group-hover:top-[120%] group-hover:opacity-100 group-hover:visible opacity-0 invisible transition-all duration-300 ease-linear w-full text-black bg-white p-3 rounded-md shadow-[rgba(0,0,0,0.1)_0px_4px_12px]"
+              class="absolute top-[120px] group-hover:top-[120%] group-hover:opacity-100 group-hover:visible opacity-0 invisible transition-all duration-300 ease-linear w-[228px] text-black bg-white p-3 rounded-md shadow-[rgba(0,0,0,0.1)_0px_4px_12px]"
             >
               <ul>
                 <li class="py-2">
                   <nuxt-link
                     to="#"
                     class="font-medium hover:text-primary transition duration-200 ease-linear"
-                  >
-                    Toàn trường
+                    ><i class="ri-school-fill"></i>
+                    {{ $t("School") }}
                   </nuxt-link>
                 </li>
 
@@ -107,8 +107,8 @@ function changeLocale(index: number) {
                   <nuxt-link
                     to="#"
                     class="font-medium hover:text-primary transition duration-200 ease-linear"
-                  >
-                    Chuyên ngành chính
+                    ><i class="ri-book-marked-fill"></i>
+                    {{ $t("Main Major") }}
                   </nuxt-link>
                 </li>
 
@@ -116,8 +116,8 @@ function changeLocale(index: number) {
                   <nuxt-link
                     to="#"
                     class="font-medium hover:text-primary transition duration-200 ease-linear"
-                  >
-                    Chuyên ngành thứ 2
+                    ><i class="ri-book-2-fill"></i>
+                    {{ $t("Second Major") }}
                   </nuxt-link>
                 </li>
               </ul>
@@ -131,7 +131,7 @@ function changeLocale(index: number) {
               class="font-semibold hover:text-primary transition duration-200 ease-linear"
             >
               <i class="ri-draft-line"></i>
-              Đăng Kí
+              {{ $t("Register") }}
             </nuxt-link>
             <div
               class="absolute top-[120px] w-[250px] group-hover:top-[120%] group-hover:opacity-100 group-hover:visible opacity-0 invisible transition-all duration-300 ease-linear text-black bg-white p-3 rounded-md shadow-[rgba(0,0,0,0.1)_0px_4px_12px]"
@@ -142,7 +142,7 @@ function changeLocale(index: number) {
                     to="#"
                     class="font-medium hover:text-primary transition duration-200 ease-linear"
                   >
-                    Học chuyên ngành chính
+                  {{ $t("Study Main Major") }}
                   </nuxt-link>
                 </li>
 
@@ -151,7 +151,7 @@ function changeLocale(index: number) {
                     to="#"
                     class="font-medium hover:text-primary transition duration-200 ease-linear"
                   >
-                    Học chuyên ngành thứ 2
+                  {{ $t("Study Second Major") }}
                   </nuxt-link>
                 </li>
 
@@ -160,7 +160,7 @@ function changeLocale(index: number) {
                     to="#"
                     class="font-medium hover:text-primary transition duration-200 ease-linear"
                   >
-                    Đăng ký môn học sớm
+                  {{ $t("Register For Extra") }}
                   </nuxt-link>
                 </li>
 
@@ -169,7 +169,7 @@ function changeLocale(index: number) {
                     to="#"
                     class="font-medium hover:text-primary transition duration-200 ease-linear"
                   >
-                    Đăng ký môn học tự chọn
+                  {{ $t("Register For Elective Courses") }}
                   </nuxt-link>
                 </li>
               </ul>
@@ -183,7 +183,7 @@ function changeLocale(index: number) {
               class="font-semibold hover:text-primary transition duration-200 ease-linear"
             >
               <i class="ri-user-line"></i>
-              Sinh Viên
+              {{ $t("Student") }}
             </nuxt-link>
 
             <div
@@ -195,7 +195,7 @@ function changeLocale(index: number) {
                     to="#"
                     class="font-medium hover:text-primary transition duration-200 ease-linear"
                   >
-                    Thông tin cá nhân
+                  {{ $t("Profile") }}
                   </nuxt-link>
                 </li>
 
@@ -204,7 +204,7 @@ function changeLocale(index: number) {
                     to="#"
                     class="font-medium hover:text-primary transition duration-200 ease-linear"
                   >
-                    Điểm danh cho lớp
+                  {{ $t("Point Practise") }}
                   </nuxt-link>
                 </li>
 
@@ -213,7 +213,7 @@ function changeLocale(index: number) {
                     to="#"
                     class="font-medium hover:text-primary transition duration-200 ease-linear"
                   >
-                    Tra cứu điểm tổng hợp
+                  {{ $t("Look Up Aggregate Scores") }}
                   </nuxt-link>
                 </li>
 

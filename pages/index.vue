@@ -6,9 +6,10 @@ import test from "@/components/test.vue";
     <marquee
       withfull
       direction="left"
-      height="100px"
+      height="28px"
       size="13px"
       scrollamount="20"
+      display="block"
     >
       Chào mừng bạn đến với cổng thông tin DNU
     </marquee>
