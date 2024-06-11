@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import img from "@/assets/images/logo_header.png";
 import imgMB from "@/assets/images/logo_header_mobile.png";
+
 // import flag_vi from "./images/svg/vn.svg";
 // import flag_gb from "./images/svg/gb.svg";
 const { t, setLocale } = useI18n();
@@ -72,7 +73,7 @@ function changeLocale(index: number) {
         <ul class="flex items-center gap-4 flex-1">
           <li>
             <nuxt-link
-              to="#"
+              to="/"
               class="font-semibold hover:text-primary transition duration-200 ease-linear"
             >
               <i class="ri-home-3-line"></i>
@@ -192,7 +193,7 @@ function changeLocale(index: number) {
               <ul>
                 <li class="py-2">
                   <nuxt-link
-                    to="#"
+                    to="/Student/Information"
                     class="font-medium hover:text-primary transition duration-200 ease-linear"
                   >
                   {{ $t("Profile") }}
@@ -201,7 +202,7 @@ function changeLocale(index: number) {
 
                 <li class="py-2">
                   <nuxt-link
-                    to="#"
+                    to="/Student/PointPractise"
                     class="font-medium hover:text-primary transition duration-200 ease-linear"
                   >
                   {{ $t("Point Practise") }}
@@ -210,7 +211,7 @@ function changeLocale(index: number) {
 
                 <li class="py-2">
                   <nuxt-link
-                    to="#"
+                    to="/Student/AggregateScores"
                     class="font-medium hover:text-primary transition duration-200 ease-linear"
                   >
                   {{ $t("Look Up Aggregate Scores") }}
@@ -219,7 +220,7 @@ function changeLocale(index: number) {
 
                 <li class="py-2">
                   <nuxt-link
-                    to="#"
+                    to="/Student/Schedule"
                     class="font-medium hover:text-primary transition duration-200 ease-linear"
                   >
                     Tra cứu lịch học
@@ -228,7 +229,7 @@ function changeLocale(index: number) {
 
                 <li class="py-2">
                   <nuxt-link
-                    to="#"
+                    to="/Student/TestSchedule"
                     class="font-medium hover:text-primary transition duration-200 ease-linear"
                   >
                     Tra cứu lịch thi
@@ -563,7 +564,7 @@ function changeLocale(index: number) {
           >
             <li class="">
               <nuxt-link
-                to="#"
+                to="/pages/Student/Information"
                 class="py-2 w-full block font-medium hover:text-primary transition duration-200 ease-linear"
               >
                 Thông tin cá nhân
