@@ -2,7 +2,7 @@
 import test from "@/components/test.vue";
 
 </script>
-<template>
+<template >
   <section class="container mx-auto">
     <marquee
       withfull

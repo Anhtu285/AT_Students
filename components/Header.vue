@@ -6,6 +6,7 @@ import imgMB from "@/assets/images/logo_header_mobile.png";
 // import flag_vi from "./images/svg/vn.svg";
 // import flag_gb from "./images/svg/gb.svg";
 const { t, setLocale } = useI18n();
+
 const isOpen = ref<any>({});
 const isMenuMobileOpen = ref(false);
 
@@ -22,6 +23,18 @@ const locale = [
   },
 ];
 
+// const data = ref<any[]>([]);
+// const loadData = async () => {
+//   data.value = await $fetch("/DepartmentSchedule", {
+//     method: "GET",
+//     baseURL: "https://localhost:44356/api",
+//   });
+// };
+
+// onBeforeMount(async () => {
+//   await loadData();
+// });
+
 const selectLocale = ref(0);
 
 function changeLocale(index: number) {
@@ -29,9 +42,10 @@ function changeLocale(index: number) {
   setLocale(locale[index].value);
 }
 </script>
+
 <template>
-  <section class="xl:block hidden fixed top-0 w-full">
-    <div :class="`bg-[url('./images/bg_header.png')]`">
+  <section class="xl:block hidden fixed top-0 w-full z-[9999]">
+    <div class="relative z-[1000] bg-white">
       <div class="container mx-auto flex items-center justify-between">
         <img :src="img" class="h-[100px] object-cover" alt="" />
 
@@ -97,7 +111,7 @@ function changeLocale(index: number) {
               <ul>
                 <li class="py-2">
                   <nuxt-link
-                    to="#"
+                    to="/Department/DepartmentScheduleld"
                     class="font-medium hover:text-primary transition duration-200 ease-linear"
                     ><i class="ri-school-fill"></i>
                     {{ $t("School") }}
@@ -143,7 +157,7 @@ function changeLocale(index: number) {
                     to="#"
                     class="font-medium hover:text-primary transition duration-200 ease-linear"
                   >
-                  {{ $t("Study Main Major") }}
+                    {{ $t("Study Main Major") }}
                   </nuxt-link>
                 </li>
 
@@ -152,7 +166,7 @@ function changeLocale(index: number) {
                     to="#"
                     class="font-medium hover:text-primary transition duration-200 ease-linear"
                   >
-                  {{ $t("Study Second Major") }}
+                    {{ $t("Study Second Major") }}
                   </nuxt-link>
                 </li>
 
@@ -161,7 +175,7 @@ function changeLocale(index: number) {
                     to="#"
                     class="font-medium hover:text-primary transition duration-200 ease-linear"
                   >
-                  {{ $t("Register For Extra") }}
+                    {{ $t("Register For Extra") }}
                   </nuxt-link>
                 </li>
 
@@ -170,7 +184,7 @@ function changeLocale(index: number) {
                     to="#"
                     class="font-medium hover:text-primary transition duration-200 ease-linear"
                   >
-                  {{ $t("Register For Elective Courses") }}
+                    {{ $t("Register For Elective Courses") }}
                   </nuxt-link>
                 </li>
               </ul>
@@ -196,7 +210,7 @@ function changeLocale(index: number) {
                     to="/Student/Information"
                     class="font-medium hover:text-primary transition duration-200 ease-linear"
                   >
-                  {{ $t("Profile") }}
+                    {{ $t("Profile") }}
                   </nuxt-link>
                 </li>
 
@@ -205,7 +219,7 @@ function changeLocale(index: number) {
                     to="/Student/PointPractise"
                     class="font-medium hover:text-primary transition duration-200 ease-linear"
                   >
-                  {{ $t("Point Practise") }}
+                    {{ $t("Point Practise") }}
                   </nuxt-link>
                 </li>
 
@@ -214,7 +228,7 @@ function changeLocale(index: number) {
                     to="/Student/AggregateScores"
                     class="font-medium hover:text-primary transition duration-200 ease-linear"
                   >
-                  {{ $t("Look Up Aggregate Scores") }}
+                    {{ $t("Look Up Aggregate Scores") }}
                   </nuxt-link>
                 </li>
 
@@ -392,6 +406,7 @@ function changeLocale(index: number) {
     </div>
   </section>
 
+  <!-- đây là header của mobile -->
   <section
     class="xl:hidden block bg-white shadow-[rgba(0,0,0,0.1)_0px_4px_12px]"
   >
@@ -780,4 +795,8 @@ function changeLocale(index: number) {
   <div class="mb-[140px] xl:block hidden"></div>
 </template>
 
-<style></style>
+<style scoped>
+.header-top {
+  background-image: url("./logo_header.png");
+}
+</style>

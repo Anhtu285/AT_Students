@@ -1,5 +1,5 @@
 
-<template>
+<template class="z index">
     <div class="isolate bg-white px-6 py-24 sm:py-10 lg:px-8">
       <form @submit.prevent="fetchData" method="POST" class="border border-gray-500 rounded-md p-5">
         <div class="flex space-x-20">
@@ -18,7 +18,7 @@
             <div>
                 <label for="msv" class="block text-sm font-semibold leading-6 text-black">Mã sinh viên: </label>
                 <div class="mt-2.5">
-                <input type="text" name="msv" id="{{ studentData.studentId }}" autocomplete="given-name" class="block w-60 rounded-md border-0 px-3.5 py-2 
+                <input type="text" name="msv" id="{{ students.studentId }}" autocomplete="given-name" class="block w-60 rounded-md border-0 px-3.5 py-2 
                     text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                 </div>
             </div>
@@ -26,7 +26,7 @@
             <div>
                 <label for="first-name" class="block text-sm font-semibold leading-6 text-gray-900">Họ Tên: </label>
                 <div class="mt-2.5">
-                <input type="text" name="first-name" id="{{ studentData.studentName }}" autocomplete="given-name" class="block w-60 rounded-md border-0 px-3.5 py-2 
+                <input type="text" name="first-name" id="{{ students.studentName }}" autocomplete="given-name" class="block w-60 rounded-md border-0 px-3.5 py-2 
                     text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                 </div>
             </div>
@@ -319,69 +319,92 @@
     </div>
 </template>
   
-<script>
-// import axios from "axios"
+<script setup>
+import { ref, onMounted } from "vue";
+import axios from "axios";
 
-// export default{
-//     data(){
-//         return {
-//             studentId: '',
-//             student:{
-//                 studentName: '',
-//                 sex: '',
-//                 birthday: '',
-//                 nationality: '',
-//                 placeOfOrigin: '',
-//                 phoneNumber: '',
-//                 email: '',
-//                 note: ''
-//             },
-//             images: '',
-//             studentData: null,
-//         };
-//     },
-//     created(){
-//         this.fetchData();
-//     },
-//     methods:{
-//         handlImage(e){
+const profileSt = ref([]);
+const students = ref([]);
+const familySt = ref([]);
+const totalProfileSt = ref(0);
+const totalStudents = ref(0);
+const totalFamilySt = ref(0);
 
-//     const fileInput = this.$refs.file
-//         if (fileInput.files.length > 0) {
-//             this.selectedFile = e.target.files[0]
+const getProfileSt = async () => {
+  try {
+    const response = await axios.get('https://localhost:44356/api/ProfileSt');
+    profileSt.value = response.data;
+    totalProfileSt.value = profileSt.value.length;
+  } catch (error) {
+    console.error(error);
+  }
+};
 
-//                 const reader = new FileReader()
+const getStudents = async () => {
+  try {
+    const response = await axios.get('https://localhost:44356/api/Student');
+    students.value = response.data;
+    totalStudents.value = students.value.length;
+  } catch (error) {
+    console.error(error);
+  }
+};
 
-//                 reader.onload = (event) => {
+const getFamilySt = async () => {
+  try {
+    const response = await axios.get('https://localhost:44356/api/FamilySt');
+    familySt.value = response.data;
+    totalFamilySt.value = familySt.value.length;
+  } catch (error) {
+    console.error(error);
+  }
+};
 
-//             const arrBuffe = event.target.result
-//                 this.byteArray = new Uint8Array(arrBuffe)
+const fetchData = async () => {
+  try {
+    const response = await axios.get('https://localhost:44356/api/Student/1');
+    student.value = response.data;
+  } catch (error) {
+    console.error(error);
+    showErrorMessage(error);
+  }
+};
 
-//                 // Hiển thị ảnh từ mảng byte
-//                 const blob = new Blob([this.byteArray])
-//                 const imageURLs = URL.createObjectURL(blob)
+const handlImage = (e) => {
+  const fileInput = e.target.files[0];
+  if (fileInput) {
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const arrBuffer = event.target.result;
+      const byteArray = new Uint8Array(arrBuffer);
+      const blob = new Blob([byteArray]);
+      const imageURL = URL.createObjectURL(blob);
+      images.value = imageURL;
+    };
+    reader.readAsArrayBuffer(fileInput);
+  } else {
+    Swal.fire("Vui lòng chọn ảnh");
+    images.value = '';
+  }
+};
 
-//                 this.images = imageURLs
-//             }
-//             reader.readAsArrayBuffer(this.selectedFile)
-//         }
-//         else {
-//             Swal.fire("Vui lòng chọn ảnh")
-//                 this.images = ''
-//             }
-//         }
-//     },
-//     fetchData(){
-//         axios
-//         .get(`https://localhost:44356/api/Student/1`)
-//         .then((response) => {
-//             this.student = response.data;
-//         })
-//         .catch((err) => {
-//             console.error(error);
-//             this.showErrorMessage(error);
-//         });
-//     }
-// }
-    
+const studentId = ref('');
+const student = ref({
+  studentName: '',
+  sex: '',
+  birthday: '',
+  nationality: '',
+  placeOfOrigin: '',
+  phoneNumber: '',
+  email: '',
+  note: ''
+});
+const images = ref('');
+
+onMounted(() => {
+  getProfileSt();
+  getStudents();
+  getFamilySt();
+  fetchData();
+});
 </script>
