@@ -21,6 +21,7 @@ const selectDepartment = async (id: number) => {
   <div>Dữ liệu</div>
 
   <ul>
+    <!-- click để lấy dữ liệu theo id  -->
     <li
       v-for="(item, index) in data"
       :key="index"
